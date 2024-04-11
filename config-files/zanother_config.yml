@@ -70,8 +70,9 @@ HLSConfig:
     TraceOutput: false
 IOType: io_stream
 InputData: null
-KerasModel: 'local/keras_model.h5'
-OutputDir: local
+KerasH5: keras/zanother_weights.h5
+KerasModel: keras/zanother.json
+OutputDir: zanother
 OutputPredictions: null
 Part: xc7z020clg400-1
 ProjectName: kzanother
