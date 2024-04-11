@@ -70,7 +70,7 @@ HLSConfig:
     TraceOutput: false
 IOType: io_stream
 InputData: null
-KerasModel: !keras_model 'local/keras_model.h5'
+KerasModel: 'local/keras_model.h5'
 OutputDir: local
 OutputPredictions: null
 Part: xc7z020clg400-1
