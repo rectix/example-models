@@ -1,0 +1,79 @@
+AcceleratorConfig:
+  Board: pynq-z2
+  Driver: python
+  Interface: axi_stream
+  Precision:
+    Input: float
+    Output: float
+Backend: VivadoAccelerator
+ClockPeriod: 5
+HLSConfig:
+  LayerName:
+    dense_in:
+      Precision:
+        accum: fixed<16,6>
+        bias: fixed<16,6>
+        result: fixed<16,6>
+        weight: fixed<16,6>
+      ReuseFactor: 56
+      Trace: true
+    dense_in_input:
+      Precision:
+        result: fixed<16,6>
+      Trace: true
+    dense_in_relu:
+      Precision:
+        result: fixed<16,6>
+        table: fixed<18,8>
+      ReuseFactor: 56
+      TableSize: 1024
+      Trace: true
+    dense_mid:
+      Precision:
+        accum: fixed<16,6>
+        bias: fixed<16,6>
+        result: fixed<16,6>
+        weight: fixed<16,6>
+      ReuseFactor: 64
+      Trace: true
+    dense_mid_relu:
+      Precision:
+        result: fixed<16,6>
+        table: fixed<18,8>
+      ReuseFactor: 64
+      TableSize: 1024
+      Trace: true
+    dense_out:
+      Precision:
+        accum: fixed<16,6>
+        bias: fixed<16,6>
+        result: fixed<16,6>
+        weight: fixed<16,6>
+      ReuseFactor: 8
+      Trace: true
+    dense_out_softmax:
+      Implementation: stable
+      Precision:
+        exp_table: fixed<18,8,RND,SAT>
+        inv_table: fixed<18,8,RND,SAT>
+        result: fixed<16,6>
+        table: fixed<18,8>
+      ReuseFactor: 8
+      Skip: false
+      TableSize: 1024
+      Trace: true
+  Model:
+    BramFactor: 1000000000
+    Precision: fixed<16,6>
+    ReuseFactor: 32
+    Strategy: Resource
+    TraceOutput: false
+IOType: io_stream
+InputData: null
+KerasModel: !keras_model 'local/keras_model.h5'
+OutputDir: local
+OutputPredictions: null
+Part: xc7z020clg400-1
+ProjectName: kzanother
+Stamp: a444f6BC
+Version: 1.0.0
