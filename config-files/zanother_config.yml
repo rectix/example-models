@@ -71,7 +71,7 @@ HLSConfig:
 IOType: io_stream
 InputData: null
 KerasH5: keras/zanother_weights.h5
-KerasModel: keras/zanother.json
+KerasModel: local/keras_model.h5
 OutputDir: zanother
 OutputPredictions: null
 Part: xc7z020clg400-1
